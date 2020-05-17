@@ -1,4 +1,7 @@
-Scenario:
+# Whats this 
+This is a mini-writeup and code segment used for a college lab on breaking blockchain encryption. The challenge was based of a European Cyber Security Compeition Challenge that was used in 2016 in Germany.
+
+## Scenario:
 
 You've registered for an online service that uses hash chains.
 You've registered as user 'nOOB’ and have been given the hash chain
@@ -7,14 +10,14 @@ Use the given information to figure out how to authenticate as the user
 'ECSC' for the given challenge hash c89aa2ffb9edcc6604005196b5f0e0e4
 i.e. Find the hash that hashes to this - This hash will be your solution.
 
-
+## The Steps
 So the goal is the find the 2nd last Hash to prove the given hash, this is done in the following way
 
 1 - known input
 2 - hash the known input
 3 - continue to hash the known input until the hash matches the given hash
 
-
+## Mini-Writeup
 nOOB = 4e0f9abf5b2e92b2cb1a1db1ee9c635c
 but the known seed is - 654e1c2ac6312d8c6441282f155c8ce9
 this rotation can be calculated but hashing the hash of noob until it matches which gives the hashcahin
@@ -23,13 +26,13 @@ so in this scenario: we need to hash ECSC until we get the hash that matches = c
 and then return the hash that was given prior to this, which will be the second last output.
 
 after running a custom script we get the output = 6fe9b4d366668a1f8a964a72cbc912c8
-
 2nd last hash for ECSC = 6fe9b4d366668a1f8a964a72cbc912c8
 
 
+## Code Running
 Bellow is the Console Output from the scirpt in this folder
 
-C:\Users\Dean>python C:\Users\Dean\Downloads\hashchainmd5brute.py
+C:\Users\CyberViking>python C:\Users\CyberViking\Downloads\hashchainmd5brute.py
 c89aa2ffb9edcc6604005196b5f0e0e4 a2c83976c0adb482d280c6b10a042be3
 41aacd22906a9bb855a12904e6a73296 + c89aa2ffb9edcc6604005196b5f0e0e4 : 2
 b6f0bbbcef793d9c0a89445eaf320992 + c89aa2ffb9edcc6604005196b5f0e0e4 : 3
